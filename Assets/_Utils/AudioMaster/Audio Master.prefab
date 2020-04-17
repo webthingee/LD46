@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5344657998453878514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5231931410507538652}
+  - component: {fileID: 8562966248824232185}
+  m_Layer: 0
+  m_Name: Audio Master
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5231931410507538652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344657998453878514}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8562966248824232185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344657998453878514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a008eabe454f20a38658a5a994ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambientClip: {fileID: 8300000, guid: 98d6c3626eb3a4fcab99bcc0b5b7e1b4, type: 3}
+  musicClip: {fileID: 8300000, guid: 878ce6568dafe4e54bbd868aba9c1463, type: 3}
+  cardFlip: {fileID: 8300000, guid: 9cd279cded5584f9bba4fd2b532c86f1, type: 3}
+  cardValid: {fileID: 8300000, guid: 74f7279a9627943f582cbb10df7870d8, type: 3}
+  startLevel: {fileID: 8300000, guid: 811c4ff112d404de7b66f22ca0969f38, type: 3}
+  messageFlyIn: {fileID: 8300000, guid: 9b47696045a374c7fb950cb00da87f9c, type: 3}
+  masterGroup: {fileID: 24300002, guid: 4df4c72a661384192a6bacdf0f41a515, type: 2}
+  musicGroup: {fileID: -3211187689811461655, guid: 4df4c72a661384192a6bacdf0f41a515,
+    type: 2}
+  ambientGroup: {fileID: 3819924852089675670, guid: 4df4c72a661384192a6bacdf0f41a515,
+    type: 2}
+  stingGroup: {fileID: 7212811537044089053, guid: 4df4c72a661384192a6bacdf0f41a515,
+    type: 2}
+  playerGroup: {fileID: 3323317127326254216, guid: 4df4c72a661384192a6bacdf0f41a515,
+    type: 2}
+  voiceGroup: {fileID: 8240106279440508042, guid: 4df4c72a661384192a6bacdf0f41a515,
+    type: 2}
