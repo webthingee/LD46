@@ -1,59 +1,87 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class CompareHands : MonoBehaviour
 {
-    public EvaluateCards attacker;
-    public EvaluateCards defender;
+    public CardsInUse fateCards;
+    public CardsInUse playerCards;
     
-    public List<string> winners = new List<string>();
-
-    public void DebugWinner()
+    public Meter happyMeter;
+    public Meter hungerMeter;
+    public Meter dirtyMeter;
+    public Meter sanityMeter;
+    
+    [Button]
+    public void ExecutePlayerCards()
     {
-        EvaluateCards winner = BetterHandIs();
-
-        int defenderCardsInt = defender.cardsInUse.NumCardsInAction();
-        defender.DiscardEvaluatedCards();
-
-        int attackCardsInt = attacker.cardsInUse.NumCardsInAction();
-        attacker.DiscardEvaluatedCards();
-
-        if (winner == null)
-        {
-            winners.Add($"Tie");
-            Debug.Log($"Tie");
-            defender.cardsInUse.Deal(defenderCardsInt);
-            attacker.cardsInUse.Deal(attackCardsInt);
-            return;
-        }
-
-        winners.Add($"{winner.cardsInUse.name} wins with {winner.handRank}");
-        Debug.Log($"{winner.cardsInUse.name} wins with {winner.handRank}");
-        
-        winner.cardsInUse.Deal(attackCardsInt);
-
+        StartCoroutine(ExecuteEachCard());
     }
 
-    private EvaluateCards BetterHandIs()
+    IEnumerator ExecuteEachCard()
     {
-        if (attacker.GetHandRank() > defender.GetHandRank())
+        foreach (Card card in playerCards.CardsInAction())
         {
-            return attacker;
-        }
+            Debug.Log($"execute events for + {card.name}");
+            ExecuteCard(card);
+            yield return new WaitForSeconds(0.5f);
+            
+            playerCards.Discard(card);
+            Debug.Log($"player discards + {card.name}");
 
-        if (attacker.GetHandRank() == defender.GetHandRank())
-        {
-            if (attacker.highCardValue > defender.highCardValue)
-            {
-                return attacker;
-            }
-
-            if (attacker.highCardValue == defender.highCardValue)
-            {
-                return null;
-            }
         }
         
-        return defender;
+        foreach (Card card in fateCards.CardsInAction())
+        {
+            Debug.Log($"fate discards + {card.name}");
+            yield return new WaitForSeconds(0.5f);
+            
+            fateCards.Discard(card);
+        }
+        
+        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<GameStateMaster>().gameState = GameState.GameCleanup;
+    }
+    
+    public void ExecuteCard(Card cardToExecute)
+    {
+        switch (cardToExecute.cardInfo.cardSuit)
+        {
+            case Suits.Clubs:
+                happyMeter.currentValue += cardToExecute.cardInfo.cardValue;
+                break;
+            case Suits.Diamonds:
+                hungerMeter.currentValue += cardToExecute.cardInfo.cardValue;
+                break;
+            case Suits.Hearts:
+                dirtyMeter.currentValue += cardToExecute.cardInfo.cardValue;
+                break;
+            case Suits.Spades:
+                sanityMeter.currentValue += cardToExecute.cardInfo.cardValue;
+                break;
+        }
+
+        Debug.Log($"fate played + {cardToExecute.name}");
+    }
+    
+    public void ExecuteFateCard(Card cardToExecute)
+    {
+        switch (cardToExecute.cardInfo.cardSuit)
+        {
+            case Suits.Clubs:
+                happyMeter.currentValue -= cardToExecute.cardInfo.cardValue;
+                break;
+            case Suits.Diamonds:
+                hungerMeter.currentValue -= cardToExecute.cardInfo.cardValue;
+                break;
+            case Suits.Hearts:
+                dirtyMeter.currentValue -= cardToExecute.cardInfo.cardValue;
+                break;
+            case Suits.Spades:
+                sanityMeter.currentValue -= cardToExecute.cardInfo.cardValue;
+                break;
+        }
+
+        Debug.Log($"fate played + {cardToExecute.name}");
     }
 }

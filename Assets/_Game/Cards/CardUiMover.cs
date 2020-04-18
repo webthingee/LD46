@@ -28,7 +28,7 @@ public class CardUiMover : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         //Debug.Log($"OnEndDrag + {gameObject.name}");
         if (cardLayout)
         {
-            Transform card = GetComponentInParent<Card>().transform;
+            Card card = GetComponentInParent<Card>();
             cardLayout.MakeChild(card);
         }
         

@@ -17,6 +17,16 @@ PrefabInstance:
       propertyPath: xDistance
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: discardPile
+      value: 
+      objectReference: {fileID: 6328280875093839932}
     - target: {fileID: 5582502239457220148, guid: a69e610c81a5f48cc8069c66ae8299b7,
         type: 3}
       propertyPath: m_Name
@@ -149,3 +159,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a69e610c81a5f48cc8069c66ae8299b7, type: 3}
+--- !u!114 &6328280875093839932 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5582502240672056902, guid: a69e610c81a5f48cc8069c66ae8299b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1921798822146168442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda2951c6f43242bdb8ddf4aeece3189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

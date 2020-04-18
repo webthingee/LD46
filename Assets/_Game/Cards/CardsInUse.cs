@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class CardsInUse : MonoBehaviour
 {
+    public int cardsToDeal = 1;
     public List<Card> allCardsInUse = new List<Card>();
     public CardLayout hand;
     public CardLayout actionZone;
     public Deck deck;
 
-    private void Start()
-    {
-        Invoke(nameof(DealStart), 1f);
-    }
-
-    public void DealStart()
-    {
-        Deal(5);
-    }
+//    private void Start()
+//    {
+//        Invoke(nameof(DealStart), 1f);
+//    }
+//
+//    public void DealStart()
+//    {
+//        Deal(cardsToDeal);
+//    }
     
     public void Deal(int numToDeal)
     {
@@ -38,7 +39,7 @@ public class CardsInUse : MonoBehaviour
             card.cardInfo.handInUse = null;
             allCardsInUse.Remove(card);
             deck.cardsInDiscardPile.Add(card);
-            deck.discardPile.MakeChild(card.transform);
+            deck.discardPile.MakeChild(card);
             return;
         }
 
@@ -48,7 +49,7 @@ public class CardsInUse : MonoBehaviour
             card.cardInfo.handInUse = null;
             deck.cardsInDrawPile.Remove(card);
             deck.cardsInDiscardPile.Add(card);
-            deck.discardPile.MakeChild(card.transform);
+            deck.discardPile.MakeChild(card);
             return;
         }
         
@@ -72,7 +73,7 @@ public class CardsInUse : MonoBehaviour
             card.cardInfo.handInUse = this;
             deck.cardsInDrawPile.Remove(card);
             allCardsInUse.Add(card);
-            hand.MakeChild(card.transform);
+            hand.MakeChild(card);
             return;
         }
 
@@ -82,7 +83,7 @@ public class CardsInUse : MonoBehaviour
             card.cardInfo.handInUse = this;
             deck.cardsInDiscardPile.Remove(card);
             allCardsInUse.Add(card);
-            hand.MakeChild(card.transform);
+            hand.MakeChild(card);
             return;
         }
         
@@ -97,7 +98,7 @@ public class CardsInUse : MonoBehaviour
             card.cardInfo.handInUse = null;
             allCardsInUse.Remove(card);
             deck.cardsInDrawPile.Add(card);
-            deck.drawPile.MakeChild(card.transform);
+            deck.drawPile.MakeChild(card);
             return;
         }
 
@@ -107,7 +108,7 @@ public class CardsInUse : MonoBehaviour
             card.cardInfo.handInUse = null;
             deck.cardsInDiscardPile.Remove(card);
             deck.cardsInDrawPile.Add(card);
-            deck.drawPile.MakeChild(card.transform);
+            deck.drawPile.MakeChild(card);
             return;
         }
 
@@ -154,6 +155,7 @@ public class CardsInUse : MonoBehaviour
     {
         return allCardsInUse.Where(x => x.cardLocation == CardLocations.inHand).ToList();
     }
+    
     private List<Card> Shuffle(List<Card> fromDeck)
     {
         return fromDeck.OrderBy(rand => Random.value).ToList();

@@ -60,7 +60,7 @@ public class EvaluateCards : MonoBehaviour
             case HandRanks.Straight:
                 cardSet = handsToPlay.Find(x => x.handRank == HandRanks.Straight);
                 cardsSentToBattle.AddRange(cardSet.cardsInSet);                
-                break;                break;
+                break;
             case HandRanks.Flush:
                 cardSet = handsToPlay.Find(x => x.handRank == HandRanks.Flush);
                 cardsSentToBattle.AddRange(cardSet.cardsInSet);                

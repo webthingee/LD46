@@ -1,9 +1,15 @@
 ﻿using System.Collections;
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameStateMaster : MonoBehaviour
 {
     public GameState gameState;
+    public CardsInUse fateDeck;
+    public CardsInUse playerDeck;
+
+    public Button startRoundButton;
 
     private void Start()
     {
@@ -29,33 +35,47 @@ public class GameStateMaster : MonoBehaviour
     IEnumerator NonePhase()
     {
         Debug.Log($"Entering Phase - None");
+
+        startRoundButton.interactable = true;
+        
         yield return new WaitForSeconds(1f);
-        gameState = GameState.FishDraw;
-
-
+        
+        while (gameState == GameState.None)
+        {
+            yield return null;
+        }
     }
+
+    [Button]
+    public void StartRoundButton()
+    {
+        startRoundButton.interactable = false;
+        gameState = GameState.FishDraw;
+    }
+    
     IEnumerator FishDrawPhase()
     {
         Debug.Log($"Fish Draw Phase");
 
-        foreach (CardsInUse cardsInUse in FindObjectsOfType<CardsInUse>())
-        {
-            cardsInUse.DealStart();
-        }
+        fateDeck.Deal(1);
+        
+        yield return new WaitForSeconds(0.25f);
+        fateDeck.GetComponent<AIAttack>().PlayCard();
 
-        yield return new WaitForSeconds(1f);
-
-        //gameState = GameState.FishResolve;
+        yield return new WaitForSeconds(0.25f);
+        gameState = GameState.FishResolve;
     }
     
     IEnumerator FishResolvePhase()
     {
         Debug.Log($"Fish Resolve Phase");
+        
+        fateDeck.GetComponent<AIAttack>().ExecuteCard();
 
-        while (gameState == GameState.FishResolve)
-        {
-            yield return null;
-        }
+//        while (gameState == GameState.FishResolve)
+//        {
+//            yield return null;
+//        }
         
         yield return new WaitForSeconds(1f);
     }
@@ -64,12 +84,12 @@ public class GameStateMaster : MonoBehaviour
     {
         Debug.Log($"Player Draw Phase");
 
-        while (gameState == GameState.PlayerDraw)
-        {
-            yield return null;
-        }
-        
+        int toDraw = 5 - playerDeck.CardsInHand().Count;
+        playerDeck.Deal(toDraw);
+
         yield return new WaitForSeconds(1f);
+        gameState = GameState.PlayerPlace;
+
     }
     
     IEnumerator PlayerPlacePhase()
@@ -100,11 +120,7 @@ public class GameStateMaster : MonoBehaviour
     {
         Debug.Log($"Cleanup End of Round");
         
-        while (gameState == GameState.GameCleanup)
-        {
-            yield return null;
-        }
-        
         yield return new WaitForSeconds(1f);
+        gameState = GameState.None;
     }
 }

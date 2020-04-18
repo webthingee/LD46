@@ -10,10 +10,13 @@ public class CardLayout : MonoBehaviour
     public bool alignHorizontal = true;
     public bool alignVerticalDown;
     public bool angleCard;
+
+    public bool isDiscard;
     
-    public void MakeChild(Transform t)
+    public void MakeChild(Card card)
     {
-        t.parent = transform;
+        card.transform.parent = transform;
+        if (isDiscard) Discard(card);
         AlignHorizontal();
     }
     
@@ -47,5 +50,10 @@ public class CardLayout : MonoBehaviour
             GetComponent<EvaluateCards>()?.BuildHandEval();
 
         }
+    }
+
+    public void Discard(Card card)
+    {
+        card.GetComponent<Card>().Discard();
     }
 }
