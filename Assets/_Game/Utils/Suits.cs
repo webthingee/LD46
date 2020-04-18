@@ -1,7 +1,7 @@
 public enum Suits
 {
-    Clubs = 0,
-    Diamonds = 1,
-    Hearts = 2,
-    Spades = 3
+    Red = 0,
+    Blue = 1,
+    Brown = 2,
+    Yellow = 3
 }

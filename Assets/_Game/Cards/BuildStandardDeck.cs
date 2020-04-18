@@ -14,16 +14,16 @@ public class BuildStandardDeck : MonoBehaviour
                 switch (j)
                 {
                     case 0:
-                        cardInfo.cardSuit = Suits.Clubs;
+                        cardInfo.cardSuit = Suits.Red;
                         break;
                     case 1:
-                        cardInfo.cardSuit = Suits.Hearts;
+                        cardInfo.cardSuit = Suits.Brown;
                         break;
                     case 2:
-                        cardInfo.cardSuit = Suits.Spades;
+                        cardInfo.cardSuit = Suits.Yellow;
                         break;
                     case 3:
-                        cardInfo.cardSuit = Suits.Diamonds;
+                        cardInfo.cardSuit = Suits.Blue;
                         break;
                 }
 

@@ -47,16 +47,16 @@ public class CompareHands : MonoBehaviour
     {
         switch (cardToExecute.cardInfo.cardSuit)
         {
-            case Suits.Clubs:
+            case Suits.Red:
                 happyMeter.currentValue += cardToExecute.cardInfo.cardValue;
                 break;
-            case Suits.Diamonds:
+            case Suits.Blue:
                 hungerMeter.currentValue += cardToExecute.cardInfo.cardValue;
                 break;
-            case Suits.Hearts:
+            case Suits.Brown:
                 dirtyMeter.currentValue += cardToExecute.cardInfo.cardValue;
                 break;
-            case Suits.Spades:
+            case Suits.Yellow:
                 sanityMeter.currentValue += cardToExecute.cardInfo.cardValue;
                 break;
         }
@@ -68,16 +68,16 @@ public class CompareHands : MonoBehaviour
     {
         switch (cardToExecute.cardInfo.cardSuit)
         {
-            case Suits.Clubs:
+            case Suits.Red:
                 happyMeter.currentValue -= cardToExecute.cardInfo.cardValue;
                 break;
-            case Suits.Diamonds:
+            case Suits.Blue:
                 hungerMeter.currentValue -= cardToExecute.cardInfo.cardValue;
                 break;
-            case Suits.Hearts:
+            case Suits.Brown:
                 dirtyMeter.currentValue -= cardToExecute.cardInfo.cardValue;
                 break;
-            case Suits.Spades:
+            case Suits.Yellow:
                 sanityMeter.currentValue -= cardToExecute.cardInfo.cardValue;
                 break;
         }
