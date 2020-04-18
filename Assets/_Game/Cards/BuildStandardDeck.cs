@@ -49,8 +49,10 @@ public class BuildStandardDeck : MonoBehaviour
                 CardData cd = ScriptableObject.CreateInstance<CardData>();
                 cd.cardInfo = cardInfo;
 
+#if (UNITY_EDITOR)
                 AssetDatabase.CreateAsset(cd, $"Assets/CardData/{cardInfo.cardName} of {cardInfo.cardSuit}.asset");
                 AssetDatabase.SaveAssets();
+#endif
             }
         }
     }

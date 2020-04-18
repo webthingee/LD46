@@ -12,7 +12,6 @@ public class Meter : MonoBehaviour
         if (foreground != null)
         {
             float val = (float)currentValue / (float)maxValue;
-            Debug.Log($"VAL: {val}");
             foreground.fillAmount = val;
         }
     }
