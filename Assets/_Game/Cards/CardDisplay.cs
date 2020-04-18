@@ -6,6 +6,7 @@ public class CardDisplay : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI suitText;
+    public TextMeshProUGUI valueText;
     public Card card;
 
     private void Awake()
@@ -31,5 +32,6 @@ public class CardDisplay : MonoBehaviour
     {
         nameText.text = card.cardInfo.cardName;
         suitText.text = card.cardInfo.cardSuit.ToString();
+        valueText.text = card.cardInfo.cardValue.ToString();
     }
 }

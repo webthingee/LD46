@@ -12,10 +12,12 @@ public class CardLayout : MonoBehaviour
     public bool angleCard;
 
     public bool isDiscard;
+    public bool isEndTurn;
     
     public void MakeChild(Card card)
     {
         card.transform.parent = transform;
+        if (isEndTurn) EndTurn();
         if (isDiscard) Discard(card);
         AlignHorizontal();
     }
@@ -55,5 +57,10 @@ public class CardLayout : MonoBehaviour
     public void Discard(Card card)
     {
         card.GetComponent<Card>().Discard();
+    }
+
+    public void EndTurn()
+    {
+        FindObjectOfType<CompareHands>().ExecutePlayerCards();
     }
 }

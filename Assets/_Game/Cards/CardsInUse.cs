@@ -24,6 +24,14 @@ public class CardsInUse : MonoBehaviour
     {
         for (int i = 0; i < numToDeal; i++)
         {
+            
+            if (deck.cardsInDrawPile.Count == 0)
+            {
+                Debug.Log("Shuffle Discard into Draw Pile");
+                deck.cardsInDrawPile = deck.cardsInDiscardPile.OrderBy(rand => Random.value).ToList();
+                deck.cardsInDiscardPile.Clear();
+            }
+            
             deck.cardsInDrawPile.First().cardInfo.handInUse = this;
             deck.cardsInDrawPile.First().Draw();
         }

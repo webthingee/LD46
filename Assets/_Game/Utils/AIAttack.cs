@@ -29,6 +29,6 @@ public class AIAttack : MonoBehaviour
     [Button]
     public void ExecuteCard()
     {
-        FindObjectOfType<CompareHands>().ExecuteFateCard(fateAttackCard);
+        FindObjectOfType<CompareHands>().ExecuteCard(fateAttackCard);
     }
 }

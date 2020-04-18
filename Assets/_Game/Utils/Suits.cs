@@ -1,7 +1,7 @@
 public enum Suits
 {
-    Red = 0,
-    Blue = 1,
-    Brown = 2,
+    Happy = 0,
+    Hunger = 1,
+    Dirty = 2,
     Yellow = 3
 }

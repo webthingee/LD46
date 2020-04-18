@@ -36,14 +36,17 @@ public class GameStateMaster : MonoBehaviour
     {
         Debug.Log($"Entering Phase - None");
 
-        startRoundButton.interactable = true;
+        startRoundButton.interactable = false;
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         
-        while (gameState == GameState.None)
-        {
-            yield return null;
-        }
+//        while (gameState == GameState.None)
+//        {
+//            yield return null;
+//        }
+
+        gameState = GameState.FishDraw;
+
     }
 
     [Button]
@@ -84,7 +87,7 @@ public class GameStateMaster : MonoBehaviour
     {
         Debug.Log($"Player Draw Phase");
 
-        int toDraw = 5 - playerDeck.CardsInHand().Count;
+        int toDraw = 4 - playerDeck.CardsInHand().Count;
         playerDeck.Deal(toDraw);
 
         yield return new WaitForSeconds(1f);
@@ -120,7 +123,7 @@ public class GameStateMaster : MonoBehaviour
     {
         Debug.Log($"Cleanup End of Round");
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         gameState = GameState.None;
     }
 }

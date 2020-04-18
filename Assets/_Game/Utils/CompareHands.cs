@@ -22,10 +22,10 @@ public class CompareHands : MonoBehaviour
     {
         foreach (Card card in playerCards.CardsInAction())
         {
-            Debug.Log($"execute events for + {card.name}");
+            Debug.Log($"player events for + {card.name}");
             ExecuteCard(card);
-            yield return new WaitForSeconds(0.5f);
             
+            yield return new WaitForSeconds(0.5f);
             playerCards.Discard(card);
             Debug.Log($"player discards + {card.name}");
 
@@ -33,10 +33,9 @@ public class CompareHands : MonoBehaviour
         
         foreach (Card card in fateCards.CardsInAction())
         {
-            Debug.Log($"fate discards + {card.name}");
             yield return new WaitForSeconds(0.5f);
-            
             fateCards.Discard(card);
+            Debug.Log($"fate discards + {card.name}");
         }
         
         yield return new WaitForSeconds(0.5f);
@@ -47,41 +46,20 @@ public class CompareHands : MonoBehaviour
     {
         switch (cardToExecute.cardInfo.cardSuit)
         {
-            case Suits.Red:
-                happyMeter.currentValue += cardToExecute.cardInfo.cardValue;
+            case Suits.Happy:
+                happyMeter.AdjustValue(cardToExecute.cardInfo.cardValue);
                 break;
-            case Suits.Blue:
-                hungerMeter.currentValue += cardToExecute.cardInfo.cardValue;
+            case Suits.Hunger:
+                hungerMeter.AdjustValue(cardToExecute.cardInfo.cardValue);
                 break;
-            case Suits.Brown:
-                dirtyMeter.currentValue += cardToExecute.cardInfo.cardValue;
+            case Suits.Dirty:
+                dirtyMeter.AdjustValue(cardToExecute.cardInfo.cardValue);
                 break;
             case Suits.Yellow:
-                sanityMeter.currentValue += cardToExecute.cardInfo.cardValue;
+                sanityMeter.AdjustValue(cardToExecute.cardInfo.cardValue);
                 break;
         }
 
-        Debug.Log($"fate played + {cardToExecute.name}");
-    }
-    
-    public void ExecuteFateCard(Card cardToExecute)
-    {
-        switch (cardToExecute.cardInfo.cardSuit)
-        {
-            case Suits.Red:
-                happyMeter.currentValue -= cardToExecute.cardInfo.cardValue;
-                break;
-            case Suits.Blue:
-                hungerMeter.currentValue -= cardToExecute.cardInfo.cardValue;
-                break;
-            case Suits.Brown:
-                dirtyMeter.currentValue -= cardToExecute.cardInfo.cardValue;
-                break;
-            case Suits.Yellow:
-                sanityMeter.currentValue -= cardToExecute.cardInfo.cardValue;
-                break;
-        }
-
-        Debug.Log($"fate played + {cardToExecute.name}");
+        Debug.Log($"played + {cardToExecute.name}");
     }
 }
