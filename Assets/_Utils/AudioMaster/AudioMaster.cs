@@ -63,24 +63,24 @@ public class AudioMaster : MonoBehaviour
 		return current;
 	}
 
-	private void Start()
+	private void OnEnable()
 	{
 		GetMixerLevelsFromPlayerPrefs();
 	}
 
 	public void GetMixerLevelsFromPlayerPrefs()
 	{		
-		float masterLvl = PlayerPrefs.GetFloat("masterVol", 0);
+		float masterLvl = PlayerPrefs.GetFloat("masterVol", 1f);
 		//masterGroup.audioMixer.SetFloat("masterVol", masterLvl);
 		masterGroup.audioMixer.SetFloat("masterVol", Mathf.Log10(masterLvl) * 20);
 
-		float musicLvl = PlayerPrefs.GetFloat("musicVol", 0);
+		float musicLvl = PlayerPrefs.GetFloat("musicVol", 1f);
 		musicGroup.audioMixer.SetFloat("musicVol", Mathf.Log10(musicLvl) * 20);
 		
-		float ambientLvl = PlayerPrefs.GetFloat("ambientVol", 0);
+		float ambientLvl = PlayerPrefs.GetFloat("ambientVol", 1f);
 		musicGroup.audioMixer.SetFloat("ambientVol", Mathf.Log10(ambientLvl) * 20);
 		
-		float stingLvl = PlayerPrefs.GetFloat("stingVol", 0);
+		float stingLvl = PlayerPrefs.GetFloat("stingVol", 1f);
 		stingGroup.audioMixer.SetFloat("stingVol", Mathf.Log10(stingLvl) * 20);
 	}
 

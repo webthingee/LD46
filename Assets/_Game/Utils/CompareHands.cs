@@ -16,7 +16,12 @@ public class CompareHands : MonoBehaviour
     public Meter sanityMeter;
 
     public GameObject actionShower;
-    
+    private CompareHands _ch;
+
+    private void Awake()
+    {
+        _ch = FindObjectOfType<CompareHands>();
+    }
     [Button]
     public void ExecutePlayerCards()
     {
@@ -40,7 +45,7 @@ public class CompareHands : MonoBehaviour
             yield return new WaitForSeconds(mySequence.Duration());
 
             Vector2 screenPos = card.transform.position;
-            GameObject g = Instantiate(FindObjectOfType<CompareHands>().actionShower, screenPos, Quaternion.identity);
+            GameObject g = Instantiate(_ch.actionShower, screenPos, Quaternion.identity);
             Destroy(g, 2f);
 
             var r = FindObjectOfType<CompareHands>().happyMeter;
@@ -92,6 +97,24 @@ public class CompareHands : MonoBehaviour
             case Suits.Yellow:
                 sanityMeter.AdjustValue(cardToExecute.cardInfo.cardValue);
                 break;
+        }
+        
+        if (_ch.happyMeter.IsMeterFull())
+        {
+            Debug.Log($"WIN"); 
+            SceneKeeper.LoadWinScene();
+        }
+
+        if (_ch.hungerMeter.IsMeterFull())
+        {
+            Debug.Log($"LOSE");  
+            SceneKeeper.LoadLoseScene();
+        }
+        
+        if (_ch.dirtyMeter.IsMeterFull())
+        {
+            Debug.Log($"LOSE"); 
+            SceneKeeper.LoadLoseScene();
         }
 
         Debug.Log($"played + {cardToExecute.name}");

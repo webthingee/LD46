@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Add New Plant
   m_EditorClassIdentifier: 
   cardInfo:
-    cardValue: 6
+    cardValue: 4
     cardName: Add New Plant
     cardSuit: 0
     cardObj: {fileID: 0}

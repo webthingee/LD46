@@ -32,8 +32,8 @@ public class AIAttack : MonoBehaviour
     [Button]
     public void ExecuteCard()
     {
-        fateAttackCard.transform.DOPunchScale(Vector3.one, 1f);
-        fateAttackCard.GetComponentInChildren<CardDisplay>().GetComponent<Image>().DOColor(Color.gray, 1f);
+        fateAttackCard.transform.DOPunchScale(Vector3.one, 0.5f);
+        fateAttackCard.GetComponentInChildren<CardDisplay>().GetComponent<Image>().DOColor(Color.gray, 0.5f);
 
         Vector2 screenPos = fateAttackCard.transform.position;
         GameObject g = Instantiate(FindObjectOfType<CompareHands>().actionShower, screenPos, Quaternion.identity);
