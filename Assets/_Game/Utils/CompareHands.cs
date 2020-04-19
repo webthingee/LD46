@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -20,7 +21,10 @@ public class CompareHands : MonoBehaviour
 
     IEnumerator ExecuteEachCard()
     {
-        foreach (Card card in playerCards.CardsInAction())
+        Card[] playerCardArray = playerCards.CardsInAction().ToArray();
+        playerCardArray.Reverse();
+        
+        foreach (Card card in playerCardArray)
         {
             Debug.Log($"player events for + {card.name}");
             ExecuteCard(card);

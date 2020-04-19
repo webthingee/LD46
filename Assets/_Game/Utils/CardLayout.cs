@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CardLayout : MonoBehaviour
@@ -11,11 +12,15 @@ public class CardLayout : MonoBehaviour
     public bool alignVerticalDown;
     public bool angleCard;
 
+    public int maxCards = 4;
     public bool isDiscard;
     public bool isEndTurn;
     
     public void MakeChild(Card card)
     {
+        Card[] toAlign = GetComponentsInChildren<Card>();
+        if (toAlign.Length >= maxCards) return;
+        
         card.transform.parent = transform;
         if (isEndTurn) EndTurn();
         if (isDiscard) Discard(card);
