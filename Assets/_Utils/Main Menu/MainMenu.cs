@@ -18,6 +18,15 @@ public class MainMenu : MonoBehaviour
         SceneKeeper.UnloadSettingsScene();
     }
     
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit ();
+#endif
+    }
+    
     public void LoadGameScene()
     {
         SceneKeeper.LoadGameScene();

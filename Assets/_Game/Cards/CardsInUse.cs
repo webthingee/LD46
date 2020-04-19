@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CardsInUse : MonoBehaviour
 {
@@ -10,8 +13,17 @@ public class CardsInUse : MonoBehaviour
     public List<Card> allCardsInUse = new List<Card>();
     public CardLayout hand;
     public CardLayout actionZone;
+    public CardLayout visualDiscardPile;
     public Deck deck;
     public bool isFish;
+
+    public TextMeshProUGUI drawDeckCount;
+    public TextMeshProUGUI discardCount;
+
+    private void Start()
+    {
+        if (drawDeckCount != null) drawDeckCount.text = deck.cardsInDrawPile.Count.ToString();
+    }
 
     public void Deal(int numToDeal)
     {
@@ -32,6 +44,7 @@ public class CardsInUse : MonoBehaviour
             
             deck.cardsInDrawPile.First().cardInfo.handInUse = this;
             yield return StartCoroutine(deck.cardsInDrawPile.First().Draw());
+            if (drawDeckCount != null) drawDeckCount.text = deck.cardsInDrawPile.Count.ToString();
         }
     }
     
@@ -46,6 +59,8 @@ public class CardsInUse : MonoBehaviour
             allCardsInUse.Remove(card);
             deck.cardsInDiscardPile.Add(card);
             deck.discardPile.MakeChild(card);
+            if (discardCount != null) discardCount.text = deck.cardsInDiscardPile.Count.ToString();
+
             return;
         }
 
@@ -56,6 +71,8 @@ public class CardsInUse : MonoBehaviour
             deck.cardsInDrawPile.Remove(card);
             deck.cardsInDiscardPile.Add(card);
             deck.discardPile.MakeChild(card);
+            if (discardCount != null) discardCount.text = deck.cardsInDiscardPile.Count.ToString();
+
             return;
         }
         
@@ -115,7 +132,7 @@ public class CardsInUse : MonoBehaviour
     {
         if (isFish)
         {
-            return actionZone;
+            return hand; //actionZone;
         }
         else
         {

@@ -30,7 +30,7 @@ public class CardUiMover : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         if (cardLayout)
         {
             Card card = GetComponentInParent<Card>();
-            cardLayout.MakeChild(card);
+            cardLayout.MakeChild(card, false);
         }
         
         transform.position = transform.parent.position;

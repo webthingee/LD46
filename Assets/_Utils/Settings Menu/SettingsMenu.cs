@@ -18,6 +18,12 @@ public class SettingsMenu : MonoBehaviour
         SceneKeeper.UnloadSettingsScene();
     }
 
+    public void MainButton()
+    {
+        SceneKeeper.UnloadSettingsScene();
+        SceneKeeper.LoadMainMenuScene();
+    }
+
     private void GamePause(bool isPaused)
     {
         Time.timeScale = isPaused ? 0.000000001f : 1;

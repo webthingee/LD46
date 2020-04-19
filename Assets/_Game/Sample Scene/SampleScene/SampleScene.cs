@@ -6,10 +6,17 @@ public class SampleScene : MonoBehaviour
     
     private void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.P)) return;
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            _showSettings = !_showSettings;
+            SceneKeeper.SettingsScene(_showSettings);
+        }
         
-        _showSettings = !_showSettings;
-        SceneKeeper.SettingsScene(_showSettings);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _showSettings = !_showSettings;
+            SceneKeeper.SettingsScene(_showSettings);
+        }
     }
 
     public void LoadMainScene()

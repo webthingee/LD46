@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
     public Card cardPrefab;
     
-    public List<CardData> gameDeck = new List<CardData>();
+    [ReorderableList] public List<CardData> gameDeck = new List<CardData>();
         
     public List<Card> cardsInDrawPile = new List<Card>();
     public CardLayout drawPile;

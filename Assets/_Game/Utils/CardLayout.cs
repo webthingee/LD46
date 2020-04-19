@@ -8,6 +8,8 @@ public class CardLayout : MonoBehaviour
 {
     public float xDistance = 0.25f;
     public CardLocations cardLocation;
+
+    public CardLayout validateAgainst;
     
     public bool alignHorizontal = true;
     public bool alignVerticalDown;
@@ -17,18 +19,24 @@ public class CardLayout : MonoBehaviour
     public bool isDiscard;
     public bool isEndTurn;
     
-    public void MakeChild(Card card)
+    public void MakeChild(Card card, bool animate = true)
     {
         Card[] toAlign = GetComponentsInChildren<Card>();
         if (toAlign.Length >= maxCards) return;
+        if (card.transform.root != transform.root) return;
+
+        if (validateAgainst != null)
+        {
+            if (validateAgainst.GetComponentsInChildren<Card>().Length != validateAgainst.maxCards) return;
+        }
         
         card.transform.parent = transform;
         if (isEndTurn) EndTurn();
         if (isDiscard) Discard(card);
-        AlignHorizontal();
+        AlignHorizontal(animate);
     }
     
-    public void AlignHorizontal()
+    public void AlignHorizontal(bool animate = true)
     {
         Card[] toAlign = GetComponentsInChildren<Card>();
         int itemsToAlign = toAlign.Length;
@@ -37,8 +45,15 @@ public class CardLayout : MonoBehaviour
         foreach (Card card in toAlign)
         {
 
-            //card.transform.position = new Vector2(i, 0) + (Vector2)transform.position;
-            card.transform.DOMove(new Vector2(i, 0) + (Vector2)transform.position, 0.2f);
+            if (!animate)
+            {
+                card.transform.position = new Vector2(i, 0) + (Vector2)transform.position;
+            }
+            else
+            {
+                card.transform.DOMove(new Vector2(i, 0) + (Vector2)transform.position, 0.2f);
+            }
+            
             i += xDistance * 2;
 
             //if (angleCard)

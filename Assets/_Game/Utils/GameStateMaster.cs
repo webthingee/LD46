@@ -64,10 +64,10 @@ public class GameStateMaster : MonoBehaviour
 
         fateDeck.Deal(1);
         
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(2f);
         fateDeck.GetComponent<AIAttack>().PlayCard();
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1f);
         gameState = GameState.FishResolve;
     }
     
