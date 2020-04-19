@@ -23,6 +23,11 @@ public class Meter : MonoBehaviour
         }
     }
 
+    public bool IsMeterFull()
+    {
+        return _currentValue == maxValue;
+    }
+
     private void Update()
     {
         if (foreground != null)

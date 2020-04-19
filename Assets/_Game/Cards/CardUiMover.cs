@@ -5,6 +5,7 @@ public class CardUiMover : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 {
     private Vector2 origPos;
     public CardLayout cardLayout;
+    public bool isFrozen;
     
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -19,7 +20,7 @@ public class CardUiMover : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = eventData.pointerCurrentRaycast.worldPosition;
+        if (!isFrozen) transform.position = eventData.pointerCurrentRaycast.worldPosition;
         //Debug.Log($"OnDrag + {gameObject.name}");
     }
 
@@ -37,6 +38,8 @@ public class CardUiMover : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Player")) return;
+        
         //Debug.Log($"Trigger + {other.gameObject.name} and {gameObject.name}");
         CardLayout cl = other.GetComponent<CardLayout>();
         if (cl != null) cardLayout = cl;
@@ -44,6 +47,8 @@ public class CardUiMover : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     
     private void OnTriggerExit(Collider other)
     {
+        if (other.CompareTag("Player")) return;
+        
         if (cardLayout) cardLayout = null;
     }
 }

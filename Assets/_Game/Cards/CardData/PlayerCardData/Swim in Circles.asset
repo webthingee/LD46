@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6c93eb8563144f92a70e93866581721, type: 3}
-  m_Name: Anusing Fart
+  m_Name: Swim in Circles
   m_EditorClassIdentifier: 
   cardInfo:
-    cardValue: 1
-    cardName: Amusing Fart
-    cardSuit: 2
+    cardValue: 4
+    cardName: Swim In Circles
+    cardSuit: 0
     cardObj: {fileID: 0}
     deck: {fileID: 0}
     handInUse: {fileID: 0}

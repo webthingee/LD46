@@ -38,7 +38,6 @@ public class CompareHands : MonoBehaviour
             Debug.Log($"fate discards + {card.name}");
         }
         
-        yield return new WaitForSeconds(0.5f);
         FindObjectOfType<GameStateMaster>().gameState = GameState.GameCleanup;
     }
     

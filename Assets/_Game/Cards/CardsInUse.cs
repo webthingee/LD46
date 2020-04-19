@@ -10,16 +10,6 @@ public class CardsInUse : MonoBehaviour
     public CardLayout actionZone;
     public Deck deck;
 
-//    private void Start()
-//    {
-//        Invoke(nameof(DealStart), 1f);
-//    }
-//
-//    public void DealStart()
-//    {
-//        Deal(cardsToDeal);
-//    }
-    
     public void Deal(int numToDeal)
     {
         for (int i = 0; i < numToDeal; i++)

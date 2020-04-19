@@ -11,4 +11,9 @@ public class SampleScene : MonoBehaviour
         _showSettings = !_showSettings;
         SceneKeeper.SettingsScene(_showSettings);
     }
+
+    public void LoadMainScene()
+    {
+        SceneKeeper.LoadMainMenuScene();
+    }
 }

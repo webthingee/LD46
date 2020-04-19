@@ -11,6 +11,13 @@ public class GameStateMaster : MonoBehaviour
 
     public Button startRoundButton;
 
+    private CompareHands _ch;
+
+    private void Awake()
+    {
+        _ch = GetComponent<CompareHands>();
+    }
+
     private void Start()
     {
         StartCoroutine(GameStateStatus());
@@ -39,11 +46,6 @@ public class GameStateMaster : MonoBehaviour
         startRoundButton.interactable = false;
         
         yield return new WaitForSeconds(0.5f);
-        
-//        while (gameState == GameState.None)
-//        {
-//            yield return null;
-//        }
 
         gameState = GameState.FishDraw;
 
@@ -80,7 +82,7 @@ public class GameStateMaster : MonoBehaviour
 //            yield return null;
 //        }
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
     }
     
     IEnumerator PlayerDrawPhase()
@@ -90,7 +92,7 @@ public class GameStateMaster : MonoBehaviour
         int toDraw = 4 - playerDeck.CardsInHand().Count;
         playerDeck.Deal(toDraw);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         gameState = GameState.PlayerPlace;
 
     }
@@ -104,7 +106,7 @@ public class GameStateMaster : MonoBehaviour
             yield return null;
         }
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
     }
     
     IEnumerator PlayerResolvePhase()
@@ -116,12 +118,30 @@ public class GameStateMaster : MonoBehaviour
             yield return null;
         }
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
     }
     
     IEnumerator GameCleanupPhase()
     {
         Debug.Log($"Cleanup End of Round");
+        
+        if (_ch.happyMeter.IsMeterFull())
+        {
+            Debug.Log($"WIN"); 
+            SceneKeeper.LoadWinScene();
+        }
+
+        if (_ch.hungerMeter.IsMeterFull())
+        {
+            Debug.Log($"LOSE");  
+            SceneKeeper.LoadLoseScene();
+        }
+        
+        if (_ch.dirtyMeter.IsMeterFull())
+        {
+            Debug.Log($"LOSE"); 
+            SceneKeeper.LoadLoseScene();
+        }
         
         yield return new WaitForSeconds(0.5f);
         gameState = GameState.None;

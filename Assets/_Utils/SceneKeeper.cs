@@ -40,4 +40,14 @@ public class SceneKeeper
     {
         SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
+    
+    public static void LoadWinScene()
+    {
+        SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
+    }
+    
+    public static void LoadLoseScene()
+    {
+        SceneManager.LoadScene("LoseScene", LoadSceneMode.Single);
+    }
 }

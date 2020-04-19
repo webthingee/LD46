@@ -317,12 +317,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6509434, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 784964391fa624208b514871240613c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48ddfb06f9037474bac431f27ff9780b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1449,12 +1449,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.006561459, g: 0.49056602, b: 0, a: 1}
+  m_Color: {r: 0.016000032, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 784964391fa624208b514871240613c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48ddfb06f9037474bac431f27ff9780b, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1543,6 +1543,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5582502239375827814, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582502239375827815, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: xDistance
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5582502239375827833, guid: a69e610c81a5f48cc8069c66ae8299b7,
         type: 3}
       propertyPath: m_Size.x
@@ -1551,7 +1561,7 @@ PrefabInstance:
     - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
         type: 3}
       propertyPath: gameDeck.Array.size
-      value: 11
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
         type: 3}
@@ -1619,6 +1629,102 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 36d8fcca13fe641ddbabbc6f2a12463b,
         type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0053860efdb4b466b98a1cf8623115ee,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0053860efdb4b466b98a1cf8623115ee,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0053860efdb4b466b98a1cf8623115ee,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c2bc0d51b0294079ae722c1e8b2aa38,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: ff2f593f3f2114f399fc6543fc150603,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[16]
+      value: 
+      objectReference: {fileID: 11400000, guid: ff2f593f3f2114f399fc6543fc150603,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[17]
+      value: 
+      objectReference: {fileID: 11400000, guid: ff2f593f3f2114f399fc6543fc150603,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: d3a0a62a106df4e8f85746b4c36815d1,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[19]
+      value: 
+      objectReference: {fileID: 11400000, guid: be0f7a8da0f214252a7699550b22523b,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[20]
+      value: 
+      objectReference: {fileID: 11400000, guid: be0f7a8da0f214252a7699550b22523b,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[21]
+      value: 
+      objectReference: {fileID: 11400000, guid: be0f7a8da0f214252a7699550b22523b,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[22]
+      value: 
+      objectReference: {fileID: 11400000, guid: 36d8fcca13fe641ddbabbc6f2a12463b,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[23]
+      value: 
+      objectReference: {fileID: 11400000, guid: 36d8fcca13fe641ddbabbc6f2a12463b,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[24]
+      value: 
+      objectReference: {fileID: 11400000, guid: 36d8fcca13fe641ddbabbc6f2a12463b,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[25]
+      value: 
+      objectReference: {fileID: 11400000, guid: 369b16a50150a4323ab650634b08f247,
+        type: 2}
+    - target: {fileID: 5582502239457220105, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: gameDeck.Array.data[26]
+      value: 
+      objectReference: {fileID: 11400000, guid: bda8b81986061498284538144cec21c7,
+        type: 2}
     - target: {fileID: 5582502239817171948, guid: a69e610c81a5f48cc8069c66ae8299b7,
         type: 3}
       propertyPath: m_Name
@@ -1682,7 +1788,32 @@ PrefabInstance:
     - target: {fileID: 5582502240303211060, guid: a69e610c81a5f48cc8069c66ae8299b7,
         type: 3}
       propertyPath: m_Size.x
-      value: 4
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582502240303211060, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582502240303211062, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582502240303211063, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: xDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582502240537106456, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582502240537106456, guid: a69e610c81a5f48cc8069c66ae8299b7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5582502240672056902, guid: a69e610c81a5f48cc8069c66ae8299b7,
         type: 3}
@@ -1773,7 +1904,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -64}
-  m_SizeDelta: {x: 320, y: 32}
+  m_SizeDelta: {x: 96, y: 32}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1444860683
 MonoBehaviour:
@@ -2179,7 +2310,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -32}
-  m_SizeDelta: {x: 320, y: 32}
+  m_SizeDelta: {x: 96, y: 32}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1661135406
 MonoBehaviour:
@@ -2835,7 +2966,7 @@ PrefabInstance:
     - target: {fileID: 6328280874163028083, guid: be62f439974e745f0b66e6f4d6250518,
         type: 3}
       propertyPath: gameDeck.Array.size
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6328280874163028083, guid: be62f439974e745f0b66e6f4d6250518,
         type: 3}
@@ -2884,6 +3015,30 @@ PrefabInstance:
       propertyPath: gameDeck.Array.data[7]
       value: 
       objectReference: {fileID: 11400000, guid: dad9ea87007514536ba20ad2a7754dd5,
+        type: 2}
+    - target: {fileID: 6328280874163028083, guid: be62f439974e745f0b66e6f4d6250518,
+        type: 3}
+      propertyPath: gameDeck.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 923d1ce36e4e44142a3a40782c1f0e27,
+        type: 2}
+    - target: {fileID: 6328280874163028083, guid: be62f439974e745f0b66e6f4d6250518,
+        type: 3}
+      propertyPath: gameDeck.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9309f571a9b9640dab8aa45fdd1d97d3,
+        type: 2}
+    - target: {fileID: 6328280874163028083, guid: be62f439974e745f0b66e6f4d6250518,
+        type: 3}
+      propertyPath: gameDeck.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 785dab7e9b77d4ccfa64e278c1200a9f,
+        type: 2}
+    - target: {fileID: 6328280874163028083, guid: be62f439974e745f0b66e6f4d6250518,
+        type: 3}
+      propertyPath: gameDeck.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: a64b2a62f32c543ec839d7b0fe7211eb,
         type: 2}
     - target: {fileID: 6328280875462112334, guid: be62f439974e745f0b66e6f4d6250518,
         type: 3}

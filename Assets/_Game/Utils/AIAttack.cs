@@ -22,6 +22,7 @@ public class AIAttack : MonoBehaviour
         if (ListToOrder(fateCards.CardsInHand()).Count < 1) return;
         
         fateAttackCard = ListToOrder(fateCards.CardsInHand()).Last();
+        fateAttackCard.GetComponentInChildren<CardUiMover>().isFrozen = true;
 
         attackArea.MakeChild(fateAttackCard);
     }

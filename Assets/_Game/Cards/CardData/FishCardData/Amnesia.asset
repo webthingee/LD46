@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6c93eb8563144f92a70e93866581721, type: 3}
-  m_Name: Happy Two
+  m_Name: Amnesia
   m_EditorClassIdentifier: 
   cardInfo:
-    cardValue: 2
-    cardName: Happy Two
+    cardValue: -2
+    cardName: Amnesia
     cardSuit: 0
     cardObj: {fileID: 0}
     deck: {fileID: 0}
