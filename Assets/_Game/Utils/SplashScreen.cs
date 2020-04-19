@@ -8,11 +8,11 @@ public class SplashScreen : MonoBehaviour
     public SpriteRenderer bk;
     
     // Start is called before the first frame update
-    void Start()
+    public void OnMouseDown()
     {
         Sequence mySequence = DOTween.Sequence();
         mySequence
-            .Append(bk.DOFade(0, 5f))
+            .Append(bk.DOFade(0, 2.5f))
             .OnComplete(() => LoadMainMenu());
     }
 

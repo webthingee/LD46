@@ -177,7 +177,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3b240adf883434085ae246636bb9c525, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -449,6 +449,17 @@ PrefabInstance:
       propertyPath: m_Text
       value: Back To Game
       objectReference: {fileID: 0}
+    - target: {fileID: 665296255952742996, guid: 79faf98a1ffb64b16bfb6199d09c98ce,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b240adf883434085ae246636bb9c525,
+        type: 3}
+    - target: {fileID: 785600668769800113, guid: 79faf98a1ffb64b16bfb6199d09c98ce,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.48235294
+      objectReference: {fileID: 0}
     - target: {fileID: 1144015701473485711, guid: 79faf98a1ffb64b16bfb6199d09c98ce,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -464,6 +475,12 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2044596844742623519, guid: 79faf98a1ffb64b16bfb6199d09c98ce,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b240adf883434085ae246636bb9c525,
+        type: 3}
     - target: {fileID: 2190576418437464741, guid: 79faf98a1ffb64b16bfb6199d09c98ce,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -549,6 +566,24 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7850234652648633008, guid: 79faf98a1ffb64b16bfb6199d09c98ce,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b240adf883434085ae246636bb9c525,
+        type: 3}
+    - target: {fileID: 7850234652683172494, guid: 79faf98a1ffb64b16bfb6199d09c98ce,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b240adf883434085ae246636bb9c525,
+        type: 3}
+    - target: {fileID: 7850234654194815994, guid: 79faf98a1ffb64b16bfb6199d09c98ce,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b240adf883434085ae246636bb9c525,
+        type: 3}
     - target: {fileID: 7982633127504820532, guid: 79faf98a1ffb64b16bfb6199d09c98ce,
         type: 3}
       propertyPath: m_AnchorMax.y

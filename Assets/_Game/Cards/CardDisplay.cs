@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardDisplay : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI suitText;
     public TextMeshProUGUI valueText;
     public GameObject cardBack;
+    public Image cardFaceImage;
     public Card card;
 
     private void Awake()
@@ -39,5 +41,6 @@ public class CardDisplay : MonoBehaviour
         nameText.text = card.cardInfo.cardName;
         suitText.text = card.cardInfo.cardSuit.ToString();
         valueText.text = card.cardInfo.cardValue.ToString();
+        cardFaceImage.sprite = FindObjectOfType<CardFaceMaster>().cardFaceEnumMatch[(int)card.cardInfo.cardSuit];
     }
 }
