@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 
 public class CardsInUse : MonoBehaviour
@@ -9,8 +11,14 @@ public class CardsInUse : MonoBehaviour
     public CardLayout hand;
     public CardLayout actionZone;
     public Deck deck;
+    public bool isFish;
 
     public void Deal(int numToDeal)
+    {
+        StartCoroutine(DealWithTime(numToDeal));
+    }
+
+    IEnumerator DealWithTime(int numToDeal)
     {
         for (int i = 0; i < numToDeal; i++)
         {
@@ -23,7 +31,7 @@ public class CardsInUse : MonoBehaviour
             }
             
             deck.cardsInDrawPile.First().cardInfo.handInUse = this;
-            deck.cardsInDrawPile.First().Draw();
+            yield return StartCoroutine(deck.cardsInDrawPile.First().Draw());
         }
     }
     
@@ -71,7 +79,22 @@ public class CardsInUse : MonoBehaviour
             card.cardInfo.handInUse = this;
             deck.cardsInDrawPile.Remove(card);
             allCardsInUse.Add(card);
-            hand.MakeChild(card);
+            
+            card.transform.position = transform.position;
+            
+            Sequence mySequence = DOTween.Sequence();
+            mySequence
+                .AppendInterval(0.5f)
+                .AppendCallback(card.ShowFront)
+                .Append(card.transform.DOMove(Vector3.zero, 0.5f))
+                .Append(card.transform.DOMove(MoveTo(card).transform.position, 0.5f))
+                .AppendInterval(0.1f)
+                .OnComplete(() => MoveTo(card).MakeChild(card));
+            
+            //card.transform.position = transform.position;
+            
+            
+            //hand.MakeChild(card);
             return;
         }
 
@@ -86,6 +109,18 @@ public class CardsInUse : MonoBehaviour
         }
         
         if (card == null) Debug.LogWarning("No Card To Discard");
+    }
+
+    public CardLayout MoveTo(Card card)
+    {
+        if (isFish)
+        {
+            return actionZone;
+        }
+        else
+        {
+            return hand;
+        }
     }
 
     public void ToDrawPile(Card cardToDiscard)

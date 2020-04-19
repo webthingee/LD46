@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 
 public class CardLayout : MonoBehaviour
@@ -35,7 +36,9 @@ public class CardLayout : MonoBehaviour
         float i = -(itemsToAlign * xDistance - xDistance);
         foreach (Card card in toAlign)
         {
-            card.transform.position = new Vector2(i, 0) + (Vector2)transform.position;
+
+            //card.transform.position = new Vector2(i, 0) + (Vector2)transform.position;
+            card.transform.DOMove(new Vector2(i, 0) + (Vector2)transform.position, 0.2f);
             i += xDistance * 2;
 
             //if (angleCard)

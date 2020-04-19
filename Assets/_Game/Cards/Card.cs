@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Card : MonoBehaviour
@@ -24,15 +25,27 @@ public class Card : MonoBehaviour
 		OnCardInfoUpdated?.Invoke(this, EventArgs.Empty);
 	}
 
-	public void Draw()
+	//public void Draw()
+	public IEnumerator Draw()
 	{
 		cardInfo.handInUse.Draw(this);
 		OnCardInfoUpdated?.Invoke(this, EventArgs.Empty);
+		yield return new WaitForSeconds(1f);
+	}
+
+	public void ShowFront(bool showFront = true)
+	{
+		GetComponentInChildren<CardDisplay>().ShowFront();
 	}
 	
 	public void Discard()
 	{
 		cardInfo.handInUse.Discard(this);
+	}
+
+	public void ShowFront()
+	{
+		GetComponentInChildren<CardDisplay>().ShowFront();
 	}
 }
 

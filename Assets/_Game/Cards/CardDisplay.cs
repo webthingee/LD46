@@ -7,6 +7,7 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI suitText;
     public TextMeshProUGUI valueText;
+    public GameObject cardBack;
     public Card card;
 
     private void Awake()
@@ -26,6 +27,11 @@ public class CardDisplay : MonoBehaviour
     private void CardInfoUpdatedReaction(object sender, EventArgs e)
     {
         UpdateDisplay();
+    }
+
+    public void ShowFront(bool showFront = true)
+    {
+        cardBack.SetActive(showFront);
     }
 
     public void UpdateDisplay()
