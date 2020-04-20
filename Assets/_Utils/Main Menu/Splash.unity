@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bk: {fileID: 114568711}
+  randomSounds: []
 --- !u!1 &213580656
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +244,6 @@ GameObject:
   - component: {fileID: 213580659}
   - component: {fileID: 213580658}
   - component: {fileID: 7080565324110944965}
-  - component: {fileID: 7438172503490384227}
   m_Layer: 5
   m_Name: Main Menu Canvas
   m_TagString: Untagged
@@ -782,6 +782,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bk: {fileID: 640604552}
+  randomSounds:
+  - {fileID: 8300000, guid: 8dd8d0275e38c4688b660c33d50715e3, type: 3}
+  - {fileID: 8300000, guid: 30ef093ade8734afa8f7003d3f70de68, type: 3}
+  - {fileID: 8300000, guid: a678d4b852b1147a9b16585d1e963803, type: 3}
+  - {fileID: 8300000, guid: da1d17c96657e406fbe6423acc7d9807, type: 3}
+  - {fileID: 8300000, guid: e2e713e7acd62438c9794d4e966dc9f3, type: 3}
+  - {fileID: 8300000, guid: 592f1977cd4bb40e8a63f14dfe89dcf1, type: 3}
+  - {fileID: 8300000, guid: c39f73e9aa3ed4524a22156360460b1d, type: 3}
+  - {fileID: 8300000, guid: e4f80051a94e544c59657c351b579493, type: 3}
+  - {fileID: 8300000, guid: 22ab2b1d7ffb1421ea9c98cf265cb0d7, type: 3}
 --- !u!65 &640604551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2285,17 +2295,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0856d13b1aa452fa20a989f5abccf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7438172503490384227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213580656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4229c28de04d8474d9a569722f8a975e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicClip: {fileID: 8300000, guid: 378ed102228a749fdb5a1d98ea037531, type: 3}
-  ambientClip: {fileID: 8300000, guid: 98d6c3626eb3a4fcab99bcc0b5b7e1b4, type: 3}

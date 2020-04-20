@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Dissolve : MonoBehaviour
 {
     private Material _material;
-    private float _fade = 2;
+    private float _fade = 1;
     private bool _isDissolving;
 
     private void Awake()
