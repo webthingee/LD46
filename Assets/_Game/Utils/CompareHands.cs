@@ -17,11 +17,13 @@ public class CompareHands : MonoBehaviour
 
     public GameObject actionShower;
     private CompareHands _ch;
-
+    private CardFaceMaster _cfm;
     private void Awake()
     {
         _ch = FindObjectOfType<CompareHands>();
+        _cfm = FindObjectOfType<CardFaceMaster>();
     }
+    
     [Button]
     public void ExecutePlayerCards()
     {
@@ -88,7 +90,7 @@ public class CompareHands : MonoBehaviour
             case Suits.Happy:
                 happyMeter.AdjustValue(cardToExecute.cardInfo.cardValue);
                 break;
-            case Suits.Hunger:
+            case Suits.Hungry:
                 hungerMeter.AdjustValue(cardToExecute.cardInfo.cardValue);
                 break;
             case Suits.Dirty:
@@ -97,6 +99,29 @@ public class CompareHands : MonoBehaviour
             case Suits.Yellow:
                 sanityMeter.AdjustValue(cardToExecute.cardInfo.cardValue);
                 break;
+        }
+
+        if (cardToExecute.cardInfo.handInUse.isFish)
+        {
+            _cfm.SadAudio();
+        }
+        else
+        {
+            switch (cardToExecute.cardInfo.cardSuit)
+            {
+                case Suits.Happy:
+                    _cfm.HappyAudio();
+                    break;
+                case Suits.Hungry:
+                    _cfm.HungerAudio();
+                    break;
+                case Suits.Dirty:
+                    _cfm.CleanAudio();
+                    break;
+                case Suits.Yellow:
+                    _cfm.HappyAudio();
+                    break;
+            }
         }
         
         if (_ch.happyMeter.IsMeterFull())

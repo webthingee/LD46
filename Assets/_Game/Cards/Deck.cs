@@ -41,6 +41,8 @@ public class Deck : MonoBehaviour
 
         // shuffle the draw pile
         cardsInDrawPile = Shuffle(cardsInDrawPile);
+        
+        GetComponent<CardsInUse>().UpdateDeckTotals();
     }
     
     private List<Card> Shuffle(List<Card> fromDeck)

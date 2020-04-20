@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6c93eb8563144f92a70e93866581721, type: 3}
-  m_Name: Favoriate Plant Dies
+  m_Name: Favorite Plant Dies
   m_EditorClassIdentifier: 
   cardInfo:
     cardValue: -8
-    cardName: Favoriate Plant Dies
+    cardName: Favorite Plant Dies
     cardSuit: 0
+    cardFaceImageOverride: {fileID: 0}
+    audioClip: {fileID: 0}
     cardObj: {fileID: 0}
     deck: {fileID: 0}
     handInUse: {fileID: 0}

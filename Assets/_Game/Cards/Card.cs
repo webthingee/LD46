@@ -8,8 +8,14 @@ public class Card : MonoBehaviour
 	public CardInfo cardInfo;
 	public CardLayout cardLayout;
 	public CardLocations cardLocation;
-
+	private CardFaceMaster _cfm;
+	
 	public event EventHandler OnCardInfoUpdated;
+
+	private void Awake()
+	{
+		_cfm = FindObjectOfType<CardFaceMaster>();
+	}
 
 	public void Init(CardData cardData, Deck fromDeck)
 	{
@@ -29,6 +35,7 @@ public class Card : MonoBehaviour
 	public IEnumerator Draw()
 	{
 		cardInfo.handInUse.Draw(this);
+		_cfm.CardFlip();
 		OnCardInfoUpdated?.Invoke(this, EventArgs.Empty);
 		yield return new WaitForSeconds(1f);
 	}

@@ -78,10 +78,12 @@ public class AudioMaster : MonoBehaviour
 		musicGroup.audioMixer.SetFloat("musicVol", Mathf.Log10(musicLvl) * 20);
 		
 		float ambientLvl = PlayerPrefs.GetFloat("ambientVol", 1f);
-		musicGroup.audioMixer.SetFloat("ambientVol", Mathf.Log10(ambientLvl) * 20);
+		ambientGroup.audioMixer.SetFloat("ambientVol", Mathf.Log10(ambientLvl) * 20);
 		
 		float stingLvl = PlayerPrefs.GetFloat("stingVol", 1f);
 		stingGroup.audioMixer.SetFloat("stingVol", Mathf.Log10(stingLvl) * 20);
+		voiceGroup.audioMixer.SetFloat("stingVol", Mathf.Log10(stingLvl) * 20);
+		playerGroup.audioMixer.SetFloat("stingVol", Mathf.Log10(stingLvl) * 20);
 	}
 
 	public static void PlayMusic(AudioClip musicClip, bool isLooping = true)
@@ -113,5 +115,16 @@ public class AudioMaster : MonoBehaviour
 		//Set the jump SFX clip and tell the source to play
 		current.stingSource.clip = audioClip;
 		current.stingSource.Play();
+	}
+	
+	public static void PlayPlayer(AudioClip audioClip)
+	{
+		//If there is no current AudioManager, exit
+		if (current == null)
+			return;
+
+		//Set the jump SFX clip and tell the source to play
+		current.playerSource.clip = audioClip;
+		current.playerSource.Play();
 	}
 }

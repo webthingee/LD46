@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class CardsInUse : MonoBehaviour
@@ -27,6 +27,7 @@ public class CardsInUse : MonoBehaviour
 
     public void Deal(int numToDeal)
     {
+        UpdateDeckTotals();
         StartCoroutine(DealWithTime(numToDeal));
     }
 
@@ -44,7 +45,7 @@ public class CardsInUse : MonoBehaviour
             
             deck.cardsInDrawPile.First().cardInfo.handInUse = this;
             yield return StartCoroutine(deck.cardsInDrawPile.First().Draw());
-            if (drawDeckCount != null) drawDeckCount.text = deck.cardsInDrawPile.Count.ToString();
+            UpdateDeckTotals();
         }
     }
     
@@ -59,7 +60,7 @@ public class CardsInUse : MonoBehaviour
             allCardsInUse.Remove(card);
             deck.cardsInDiscardPile.Add(card);
             deck.discardPile.MakeChild(card);
-            if (discardCount != null) discardCount.text = deck.cardsInDiscardPile.Count.ToString();
+            UpdateDeckTotals();
 
             return;
         }
@@ -71,7 +72,7 @@ public class CardsInUse : MonoBehaviour
             deck.cardsInDrawPile.Remove(card);
             deck.cardsInDiscardPile.Add(card);
             deck.discardPile.MakeChild(card);
-            if (discardCount != null) discardCount.text = deck.cardsInDiscardPile.Count.ToString();
+            UpdateDeckTotals();
 
             return;
         }
@@ -94,6 +95,7 @@ public class CardsInUse : MonoBehaviour
         if (card != null)
         {
             card.cardInfo.handInUse = this;
+            card.GetComponentInChildren<CardDisplay>().GetComponent<Image>().color = Color.white;
             deck.cardsInDrawPile.Remove(card);
             allCardsInUse.Add(card);
             
@@ -119,6 +121,7 @@ public class CardsInUse : MonoBehaviour
         if (card != null)
         {
             card.cardInfo.handInUse = this;
+            card.GetComponentInChildren<CardDisplay>().GetComponent<Image>().color = Color.white;
             deck.cardsInDiscardPile.Remove(card);
             allCardsInUse.Add(card);
             hand.MakeChild(card);
@@ -209,6 +212,12 @@ public class CardsInUse : MonoBehaviour
     private List<Card> Shuffle(List<Card> fromDeck)
     {
         return fromDeck.OrderBy(rand => Random.value).ToList();
+    }
+
+    public void UpdateDeckTotals()
+    {
+        if (discardCount != null) discardCount.text = deck.cardsInDiscardPile.Count.ToString();
+        if (drawDeckCount != null) drawDeckCount.text = deck.cardsInDrawPile.Count.ToString();
     }
     #endregion
 }

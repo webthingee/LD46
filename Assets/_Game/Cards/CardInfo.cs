@@ -7,6 +7,7 @@ public class CardInfo
     public string cardName;
     public Suits cardSuit;
     public Sprite cardFaceImageOverride;
+    public AudioClip audioClip;
     
     [Space(20)][Header("Dynamic")]
     public GameObject cardObj;

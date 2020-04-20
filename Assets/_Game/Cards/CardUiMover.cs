@@ -9,6 +9,7 @@ public class CardUiMover : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     
     public void OnPointerDown(PointerEventData eventData)
     {
+        FindObjectOfType<CardFaceMaster>().CardDrop();
         //Debug.Log($"Pointer Down + {gameObject.name}");
         //origPos = transform.position;
     }
@@ -20,7 +21,10 @@ public class CardUiMover : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!isFrozen) transform.position = eventData.pointerCurrentRaycast.worldPosition;
+        if (isFrozen) return;
+        if (FindObjectOfType<GameStateMaster>().gameState != GameState.PlayerPlace) return;
+        
+        transform.position = eventData.pointerCurrentRaycast.worldPosition;
         //Debug.Log($"OnDrag + {gameObject.name}");
     }
 
@@ -33,6 +37,7 @@ public class CardUiMover : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             cardLayout.MakeChild(card, false);
         }
         
+        FindObjectOfType<CardFaceMaster>().CardDrop();
         transform.position = transform.parent.position;
     }
 

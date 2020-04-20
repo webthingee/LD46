@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6889575119985269725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6889575119985269699}
+  - component: {fileID: 6889575119985269697}
+  m_Layer: 0
+  m_Name: SoundLinks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6889575119985269699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889575119985269725}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6889575119985269697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889575119985269725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0fd580379e24500ab33ceb093b4d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardFlips:
+  - {fileID: 8300000, guid: f88e9fc9defcf4bbfb03321994e2d48d, type: 3}
+  - {fileID: 8300000, guid: aaacb3ee9dd344d01a1a1c5985f239e0, type: 3}
+  cardFaceEnumMatch:
+  - {fileID: 21300000, guid: 1492d33bae7f4498e88cc8eab4b81088, type: 3}
+  - {fileID: 21300000, guid: db103ac1eaa4641efbb4072ddfc9bfa6, type: 3}
+  - {fileID: 21300000, guid: f79a3078864324c6595800dc13684131, type: 3}
+  - {fileID: 21300000, guid: 68b4a5f8fc3674196ad62088ca728ab9, type: 3}
+  cardFaceEnumAudio:
+  - {fileID: 8300000, guid: 592f1977cd4bb40e8a63f14dfe89dcf1, type: 3}
+  - {fileID: 8300000, guid: 4e208eeffb7fc4db29ea4fed117e0fc1, type: 3}
+  - {fileID: 8300000, guid: 66c9641ceb20a4a08a828da8dd6e2668, type: 3}
+  - {fileID: 8300000, guid: 592f1977cd4bb40e8a63f14dfe89dcf1, type: 3}
+  happyAudio:
+  - {fileID: 8300000, guid: 4e208eeffb7fc4db29ea4fed117e0fc1, type: 3}
+  - {fileID: 8300000, guid: 66c9641ceb20a4a08a828da8dd6e2668, type: 3}
+  - {fileID: 8300000, guid: 592f1977cd4bb40e8a63f14dfe89dcf1, type: 3}
+  - {fileID: 8300000, guid: c39f73e9aa3ed4524a22156360460b1d, type: 3}
+  - {fileID: 8300000, guid: da1d17c96657e406fbe6423acc7d9807, type: 3}
+  sadAudio:
+  - {fileID: 8300000, guid: 98f4c7c3ad355475285390f4de10b52e, type: 3}
+  - {fileID: 8300000, guid: ac08dadc1fa4748fd9e5de06283a0465, type: 3}
+  - {fileID: 8300000, guid: e2e713e7acd62438c9794d4e966dc9f3, type: 3}
+  - {fileID: 8300000, guid: 95f26a0b0f12d4a718774dbb2355e7ec, type: 3}
+  cardDrops:
+  - {fileID: 8300000, guid: 7c5adafd3c16840a3b7dd7904846d804, type: 3}
+  - {fileID: 8300000, guid: e3b53449671664e1f8adb46653458980, type: 3}

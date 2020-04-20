@@ -23,7 +23,7 @@ public class BuildStandardDeck : MonoBehaviour
                         cardInfo.cardSuit = Suits.Yellow;
                         break;
                     case 3:
-                        cardInfo.cardSuit = Suits.Hunger;
+                        cardInfo.cardSuit = Suits.Hungry;
                         break;
                 }
 

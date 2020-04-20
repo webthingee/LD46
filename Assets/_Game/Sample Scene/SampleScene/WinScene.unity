@@ -206,7 +206,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.21875
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -632,7 +632,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c12a1fb5fb8f54e1d9872e40b089d3fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 067befed96f324b6c98a74d89ea32519, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -651,8 +651,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717245488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.817, y: -2.006, z: 0}
-  m_LocalScale: {x: 1.6579509, y: 1.6579509, z: 1.6579509}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -724,6 +724,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sample Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 193245030049310523, guid: c69c341debd504126afd0d144213f4c2,
+        type: 3}
+      propertyPath: musicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7fbfe93cb53324be88cc599cdafbf235, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c69c341debd504126afd0d144213f4c2, type: 3}
 --- !u!114 &193245030076552091 stripped
@@ -839,25 +844,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1987259472341778923, guid: e3b48341eee054eeba27a413b5649b55,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -128
+      objectReference: {fileID: 0}
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
       propertyPath: m_text
-      value: You Have Won
+      value: Gilbert's so happy!
       objectReference: {fileID: 0}
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 12
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
       propertyPath: m_fontSize
-      value: 128
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 128
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
@@ -867,7 +877,7 @@ PrefabInstance:
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
@@ -884,22 +894,22 @@ PrefabInstance:
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
       propertyPath: m_fontColor.r
-      value: 0.42352945
+      value: 0.9960785
       objectReference: {fileID: 0}
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
       propertyPath: m_fontColor.g
-      value: 0.3921569
+      value: 0.9960785
       objectReference: {fileID: 0}
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
       propertyPath: m_fontColor.b
-      value: 0.21568629
+      value: 0.9960785
       objectReference: {fileID: 0}
     - target: {fileID: 2065726495836113962, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4281820268
+      value: 4294901502
       objectReference: {fileID: 0}
     - target: {fileID: 6877978643132868906, guid: e3b48341eee054eeba27a413b5649b55,
         type: 3}

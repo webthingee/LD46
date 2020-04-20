@@ -92,9 +92,8 @@ public class GameStateMaster : MonoBehaviour
         int toDraw = 4 - playerDeck.CardsInHand().Count;
         playerDeck.Deal(toDraw);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.25f * toDraw);
         gameState = GameState.PlayerPlace;
-
     }
     
     IEnumerator PlayerPlacePhase()
@@ -106,7 +105,7 @@ public class GameStateMaster : MonoBehaviour
             yield return null;
         }
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
     }
     
     IEnumerator PlayerResolvePhase()

@@ -16,6 +16,7 @@ public class CardLayout : MonoBehaviour
     public bool angleCard;
 
     public int maxCards = 4;
+    public bool justPlace;
     public bool isDiscard;
     public bool isEndTurn;
     
@@ -33,7 +34,15 @@ public class CardLayout : MonoBehaviour
         card.transform.parent = transform;
         if (isEndTurn) EndTurn();
         if (isDiscard) Discard(card);
-        AlignHorizontal(animate);
+
+        if (justPlace)
+        {
+            JustPlace();
+        }
+        else
+        {
+            AlignHorizontal(animate);
+        }
     }
     
     public void AlignHorizontal(bool animate = true)
@@ -76,6 +85,25 @@ public class CardLayout : MonoBehaviour
 
         }
     }
+    
+    public void JustPlace(bool animate = true)
+    {
+        Card[] toAlign = GetComponentsInChildren<Card>();
+        foreach (Card card in toAlign)
+        {
+            int siblingIndex = card.transform.GetSiblingIndex();
+
+            if (siblingIndex == 2)
+            {
+                card.transform.localPosition = new Vector2(-1, 0); 
+            }
+            else
+            {
+                card.transform.localPosition = new Vector2(1, 0);
+            }
+            card.cardLocation = cardLocation;
+        }
+    }
 
     public void Discard(Card card)
     {
@@ -84,6 +112,7 @@ public class CardLayout : MonoBehaviour
 
     public void EndTurn()
     {
+        FindObjectOfType<GameStateMaster>().gameState = GameState.PlayerResolve;
         FindObjectOfType<CompareHands>().ExecutePlayerCards();
     }
 }
