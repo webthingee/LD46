@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5646,6 +5646,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4144636030139958704, guid: b6c60dc04d74144a4ab9fd4ff2edbf66,
         type: 3}
+      propertyPath: sadAudio.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144636030139958704, guid: b6c60dc04d74144a4ab9fd4ff2edbf66,
+        type: 3}
+      propertyPath: cardDrops.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144636030139958704, guid: b6c60dc04d74144a4ab9fd4ff2edbf66,
+        type: 3}
       propertyPath: cleanAudio.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: a678d4b852b1147a9b16585d1e963803, type: 3}
@@ -5664,6 +5674,21 @@ PrefabInstance:
       propertyPath: hungerAudio.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 995abbae52b704586a8e4302a6bc4714, type: 3}
+    - target: {fileID: 4144636030139958704, guid: b6c60dc04d74144a4ab9fd4ff2edbf66,
+        type: 3}
+      propertyPath: sadAudio.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: b83cf144e3115468c8421b79c2418b02, type: 3}
+    - target: {fileID: 4144636030139958704, guid: b6c60dc04d74144a4ab9fd4ff2edbf66,
+        type: 3}
+      propertyPath: cardDrops.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a549ba16bfdb47caa2be6fa24be086e, type: 3}
+    - target: {fileID: 4144636030139958704, guid: b6c60dc04d74144a4ab9fd4ff2edbf66,
+        type: 3}
+      propertyPath: cardDrops.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 97350851cd6b14a4aac79848a15d575e, type: 3}
     - target: {fileID: 4144636030139958705, guid: b6c60dc04d74144a4ab9fd4ff2edbf66,
         type: 3}
       propertyPath: fateCards
@@ -5694,6 +5719,12 @@ PrefabInstance:
       propertyPath: sanityMeter
       value: 
       objectReference: {fileID: 322777712}
+    - target: {fileID: 4144636030139958705, guid: b6c60dc04d74144a4ab9fd4ff2edbf66,
+        type: 3}
+      propertyPath: actionShower
+      value: 
+      objectReference: {fileID: 2555529518033185592, guid: 2f42eeb0842064c7ebf95d4948dab474,
+        type: 3}
     - target: {fileID: 4144636030139958706, guid: b6c60dc04d74144a4ab9fd4ff2edbf66,
         type: 3}
       propertyPath: m_LocalPosition.x

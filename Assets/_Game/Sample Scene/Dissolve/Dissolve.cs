@@ -1,15 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Dissolve : MonoBehaviour
 {
     private Material _material;
-    private float _fade = 1;
+    private float _fade = 2;
     private bool _isDissolving;
 
     private void Awake()
     {
         _material = GetComponent<SpriteRenderer>().material;
+    }
+
+    private void Start()
+    {
+        DissolveOut();
     }
 
     public void DissolveOut()

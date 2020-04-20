@@ -54,8 +54,8 @@ public class CompareHands : MonoBehaviour
             Vector2 screenPos1 = Camera.main.ScreenToWorldPoint(r.transform.position);
             Sequence mySequence1 = DOTween.Sequence();
             mySequence1
-                .Append(g.transform.DOMove(screenPos1, 1f))
-                .Join(g.transform.DOScale(Vector3.zero, 1f));
+                .Append(g.transform.DOMove(screenPos1, 2f))
+                .Join(g.transform.DOScale(Vector3.zero, 2f));
 
             yield return new WaitForSeconds(mySequence1.Duration());
             
